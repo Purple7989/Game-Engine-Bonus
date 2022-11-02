@@ -49,5 +49,10 @@ public class EnemyController : MonoBehaviour
     {
         Debug.Log("Change Direction");
         moveDirection = !moveDirection;
+
+        if(collision.collider.tag == "Player")
+        {
+            HealthSingleton.instance.ChangeHealth(1);
+        }
     }
 }
